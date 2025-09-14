@@ -1,4 +1,4 @@
-todo_tasks = [{"task": 'Brush', "due_time": 'due_time', "done": False}, {"task": 'task', "due_time": 'due_time', "done": False}]
+todo_tasks = []
 
 def add_task():
     task = input("Enter a new task:")
@@ -29,3 +29,24 @@ def remove_task():
         print(f"{removed_task['task']} removed successfully!")
     else:
         print("Invalid Task no")
+
+
+def menu():
+    while True:
+        print("\n--- To-Do App ---")
+        print("1. Add Task")
+        print("2. View Tasks")
+        print("3. Mark Task as Done")
+        print("4. Remove Task")
+        print("5. Exit")
+        choice = int(input("Choose an option: "))
+
+        match choice:
+            case 1: add_task()
+            case 2: view_task()
+            case 3: mark_done()
+            case 4: remove_task()
+            case 5: break
+            case _: print("Invalid Nunber")
+
+menu()
